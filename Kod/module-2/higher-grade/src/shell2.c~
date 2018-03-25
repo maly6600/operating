@@ -1,0 +1,58 @@
+#include "parser.h"
+
+#include <sys/types.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <sys/wait.h> // wait()
+
+#define READ  0
+#define WRITE 1
+
+int main() {
+
+  int* Array_of_FD[15][2] = calloc(sizeof(int[15][2]));
+  
+  int n;
+  char* argvs[MAX_COMMANDS][MAX_ARGV];
+  size_t size = 128;
+  char line[size];
+
+  while(true) {
+    printf(" >> ");
+    get_line(line, size);
+
+    n = parse(line, argvs);
+
+    // Debug printouts.
+    printf("%d commands parsed.\n", n);
+    print_argvs(argvs);
+    
+    if (n==1) {
+      fork_cmds(argvs, n, fd);
+      wait_for_all_cmds(n, fd);
+    }else { //nu vill vi göra pipes
+
+      
+      pipe_creation(n);
+      int return_pipe = pipe(fd);
+
+      if (return_pipe == -1) {
+	perror("Pipe creation failed!");
+	exit(EXIT_FAILURE);
+      }
+      
+    }  
+  }
+}
+
+int pipe_creation(int number_of_cmds,int* Array_of_FD[a][b]);
+) {
+  for (int i=0; i < (number_of_cmds - 1) ; i++){
+    pipe(*Array_of_FD [i]);
+  );
+  }
+}
