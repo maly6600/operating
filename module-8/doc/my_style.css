@@ -1,0 +1,96 @@
+/* standard EDoc style sheet */
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+      	margin-left: .25in;
+       	margin-right: .2in;
+       	margin-top: 0.2in;
+       	margin-bottom: 0.2in;
+       	color: #000000;
+       	background-color: #ffffff;
+}
+
+a:link, a:visited {
+    text-decoration:none;
+    color:blue;
+}
+
+code, pre, .example, table[summary="function index"] td a, table[summary="list of modules"] td a {
+    font-family: Courier, monospace; 
+    font-weight: normal
+}
+
+table[summary="function index"] td a, table[summary="list of modules"] td a {
+    font-weight: bold;
+    
+}
+table[summary="function index"] td {
+    padding:5px;
+}
+
+div.example {
+    background-color: #EEF;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size:1em;
+}
+
+div.spec {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+h1,h2, {
+ 	margin-left: -0.2in;
+}
+
+
+
+table[summary="function index"] {
+    background-color: #F5FFEB;
+}
+
+    
+h3 {
+    padding: 10px;
+}
+div.navbar {
+	background-color: #add8e6;
+	padding: 0.2em;
+}
+h2.indextitle {
+	padding: 0.4em;
+	background-color: #add8e6;
+}
+h3.function,h3.typedecl {
+    background-color: #add8e6;
+    padding-left: 1em;
+    border-left: 15px solid black;
+
+}
+
+a.module,a.package {
+	text-decoration:none
+}
+a.module:hover,a.package:hover {
+	background-color: #eeeeee;
+}
+ul.definitions {
+	list-style-type: none;
+}
+ul.index {
+	list-style-type: none;
+}
+
+/*
+ * Minor style tweaks
+ */
+ul {
+	list-style-type: square;
+}
+table {
+	border-collapse: collapse;
+}
+td {
+	padding: 3
+}

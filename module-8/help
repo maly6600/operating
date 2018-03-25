@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+os='unknown'
+
+os=`uname`
+echo $os
+
+browser=open
+
+if [[ $os == 'Darwin' ]]; then
+    browser=open
+elif [[ $os == 'Linux' ]]; then
+    browser=xdg-open
+elif [[ $os == 'SunOS' ]]; then
+    browser=/usr/dt/bin/sdtwebclient
+fi
+
+$browser doc/index.html

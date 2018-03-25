@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Module tutorial</title>
+<link rel="stylesheet" type="text/css" href="my_style.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module tutorial</h1>
+<ul class="index"><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+
+<p><b>Authors:</b> Karl Marklund (<a href="mailto:karl.marklund@it.uu.se"><tt>karl.marklund@it.uu.se</tt></a>).</p>
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#char_to_lower-1">char_to_lower/1</a></td><td>Convert a character to lower case.</td></tr>
+<tr><td valign="top"><a href="#char_to_upper-1">char_to_upper/1</a></td><td>Convert a character to upper case.</td></tr>
+<tr><td valign="top"><a href="#count-2">count/2</a></td><td>Returns the number of times Char occurs in String.</td></tr>
+<tr><td valign="top"><a href="#fac-1">fac/1</a></td><td>The factorial function.</td></tr>
+<tr><td valign="top"><a href="#fac_tr-1">fac_tr/1</a></td><td>The factorial function, implemented using tail recursion.</td></tr>
+<tr><td valign="top"><a href="#hello-0">hello/0</a></td><td>Prints "Hello!" to the terminal.</td></tr>
+<tr><td valign="top"><a href="#hello-1">hello/1</a></td><td>TODO: add description here.</td></tr>
+<tr><td valign="top"><a href="#max-1">max/1</a></td><td>Returns the max value M in a list L.</td></tr>
+<tr><td valign="top"><a href="#odd_and_even-1">odd_and_even/1</a></td><td>Returns a tuple {{odd, Odd}, {even, Even}} where Odd and Even
+  are lists with all the odd and even numbers in List.</td></tr>
+<tr><td valign="top"><a href="#right_triangles-1">right_triangles/1</a></td><td>Generates a list of tuples {A,B,C} such that A and B are sides
+  in a right triangle with hypotenuse C, where <code>A,B,C &lt;= N</code>.</td></tr>
+<tr><td valign="top"><a href="#simpsons-0">simpsons/0</a></td><td>Returns a list of tuples, where each tuple describes a caracter in the Simposon family.</td></tr>
+<tr><td valign="top"><a href="#simpsons-1">simpsons/1</a></td><td>Returns a filtered list of names of characters in the Simpson family.</td></tr>
+<tr><td valign="top"><a href="#str_to_lower-1">str_to_lower/1</a></td><td>Convert a string to lower case.</td></tr>
+<tr><td valign="top"><a href="#str_to_upper-1">str_to_upper/1</a></td><td>Convert a string to upper case.</td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="char_to_lower-1">char_to_lower/1</a></h3>
+<div class="spec">
+<p><tt>char_to_lower(Char::char()) -&gt; char()</tt><br></p>
+</div><p>Convert a character to lower case.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:char_to_lower($A).
+  97
+  &gt; tutorial:char_to_lower($@).
+  64</pre>
+  </div></p>
+
+<h3 class="function"><a name="char_to_upper-1">char_to_upper/1</a></h3>
+<div class="spec">
+<p><tt>char_to_upper(Char::char()) -&gt; char()</tt><br></p>
+</div><p>Convert a character to upper case.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:char_to_upper($a).
+  65
+  &gt; tutorial:char_to_upper($@).
+  64</pre>
+  </div></p>
+
+<h3 class="function"><a name="count-2">count/2</a></h3>
+<div class="spec">
+<p><tt>count(String, Char) -&gt; integer()</tt>
+<ul class="definitions"><li><tt>String = string()</tt></li><li><tt>Char = char()</tt></li></ul></p>
+</div><p>Returns the number of times Char occurs in String.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:count("Operating systems and process oriented programming", $p).
+  3</pre>
+  </div></p>
+
+<h3 class="function"><a name="fac-1">fac/1</a></h3>
+<div class="spec">
+<p><tt>fac(N::integer()) -&gt; integer()</tt><br></p>
+</div><p>The factorial function.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  25&gt; [{N,tutorial:fac(N)} || N &lt;- lists:seq(0,10)].
+  [{0,1},
+   {1,1},
+   {2,2},
+   {3,6},
+   {4,24},
+   {5,120},
+   {6,720},
+   {7,5040},
+   {8,40320},
+   {9,362880},
+   {10,3628800}]</pre>
+  </div></p>
+
+<h3 class="function"><a name="fac_tr-1">fac_tr/1</a></h3>
+<div class="spec">
+<p><tt>fac_tr(N::integer()) -&gt; integer()</tt><br></p>
+</div><p>The factorial function, implemented using tail recursion.</p>
+
+<h3 class="function"><a name="hello-0">hello/0</a></h3>
+<div class="spec">
+<p><tt>hello() -&gt; ok</tt><br></p>
+</div><p>Prints "Hello!" to the terminal.</p>
+
+<h3 class="function"><a name="hello-1">hello/1</a></h3>
+<div class="spec">
+<p><tt>hello(N::integer()) -&gt; ok</tt><br></p>
+</div><p>TODO: add description here</p>
+
+<h3 class="function"><a name="max-1">max/1</a></h3>
+<div class="spec">
+<p><tt>max(L) -&gt; M</tt>
+<ul class="definitions"><li><tt>L = [integer()]</tt></li><li><tt>M = integer()</tt></li></ul></p>
+</div><p>Returns the max value M in a list L.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  8&gt; tutorial:max([4,-1,8, 0, 3]).
+  8</pre>
+  </div></p>
+
+<h3 class="function"><a name="odd_and_even-1">odd_and_even/1</a></h3>
+<div class="spec">
+<p><tt>odd_and_even(List) -&gt; {{odd, Odd}, {even, Even}}</tt>
+<ul class="definitions"><li><tt>List = [integer()]</tt></li><li><tt>Odd = [integer()]</tt></li><li><tt>Even = [integer()]</tt></li></ul></p>
+</div><p>Returns a tuple {{odd, Odd}, {even, Even}} where Odd and Even
+  are lists with all the odd and even numbers in List.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:odd_and_even(lists:seq(1,10)).
+  {{odd,[9,7,5,3,1]},{even,[10,8,6,4,2]}}</pre>
+  </div></p>
+
+<h3 class="function"><a name="right_triangles-1">right_triangles/1</a></h3>
+<div class="spec">
+<p><tt>right_triangles(N) -&gt; [{A, B, C}]</tt>
+<ul class="definitions"><li><tt>N = integer()</tt></li><li><tt>A = integer()</tt></li><li><tt>B = integer()</tt></li><li><tt>C = integer()</tt></li></ul></p>
+</div><p>Generates a list of tuples {A,B,C} such that A and B are sides
+  in a right triangle with hypotenuse C, where <code>A,B,C &lt;= N</code>.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:right_triangles(10).
+  [{3,4,5},{4,3,5},{6,8,10},{8,6,10}]</pre>
+  </div></p>
+
+<h3 class="function"><a name="simpsons-0">simpsons/0</a></h3>
+<div class="spec">
+<p><tt>simpsons() -&gt; [{Type, Gender, Name}]</tt>
+<ul class="definitions"><li><tt>Type = person | cat | dog | pig</tt></li><li><tt>Gender = male | female</tt></li><li><tt>Name = string()</tt></li></ul></p>
+</div><p><p>Returns a list of tuples, where each tuple describes a caracter in the Simposon family.</p>
+ 
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:simpsons().
+  [{person,male,"Bart"},
+   {cat,female,"Snowball II"},
+   {person,male,"Homer"},
+   {person,female,"Lisa"},
+   {dog,male,"Santa's Little Helper"},
+   {person,female,"Marge"},
+   {pig,male,"Spider Pig"}]</pre>
+  </div></p>
+
+<h3 class="function"><a name="simpsons-1">simpsons/1</a></h3>
+<div class="spec">
+<p><tt>simpsons(Filter) -&gt; [Name]</tt>
+<ul class="definitions"><li><tt>Filter = names | males | females | pets</tt></li><li><tt>Name = string()</tt></li></ul></p>
+</div><p>Returns a filtered list of names of characters in the Simpson family.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:simpsons(names).
+  ["Bart","Snowball II","Homer","Lisa",
+   "Santa's Little Helper","Marge","Spider Pig"]
+  &gt; tutorial:simpsons(females).
+  ["Snowball II","Lisa","Marge"]
+  &gt; tutorial:simpsons(males).
+  ["Bart","Homer","Santa's Little Helper","Spider Pig"]
+  &gt; tutorial:simpsons(pets).
+  ["Snowball II","Santa's Little Helper","Spider Pig"]</pre>
+  </div></p>
+
+<h3 class="function"><a name="str_to_lower-1">str_to_lower/1</a></h3>
+<div class="spec">
+<p><tt>str_to_lower(String::string()) -&gt; string()</tt><br></p>
+</div><p>Convert a string to lower case.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  7&gt; tutorial:str_to_lower("Upper + Lower").
+  "upper + lower"</pre>
+  </div></p>
+
+<h3 class="function"><a name="str_to_upper-1">str_to_upper/1</a></h3>
+<div class="spec">
+<p><tt>str_to_upper(String::string()) -&gt; string()</tt><br></p>
+</div><p>Convert a string to upper case.
+  <h4><a name="Example">Example</a></h4>
+  <div class="example"><pre>  &gt; tutorial:str_to_upper("Erlang").
+  "ERLANG"</pre>
+  </div></p>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc</i></p>
+</body>
+</html>
